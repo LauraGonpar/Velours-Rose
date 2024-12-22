@@ -1,0 +1,401 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.grid-container {
+  display: grid;
+  height: 100vh;
+  grid-template-columns: 1fr;
+  grid-template-areas:
+    "nav"
+    "aside"
+    "main"
+    "footer";
+}
+.grid-item {
+  padding: 10px;
+  color: white;
+}
+.grid-item-main {
+  padding: 10px;
+  margin-bottom: 60px;
+}
+nav {
+  grid-area: nav;
+  height: 60px;
+  width: 100vw;
+  position: fixed;
+  top: 0px;
+  background-color: rgb(248, 162, 248);
+}
+aside {
+  grid-area: aside;
+  height: 80px;
+  display: grid;
+  justify-content: center;
+  margin-top: 40px;
+}
+main {
+  grid-area: main;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 75px;
+}
+footer {
+  grid-area: footer;
+  background-color: rgb(248, 162, 248);
+  text-align: center;
+  align-items: center;
+  width: 100%;
+  height: 70px;
+}
+.menu-inicio {
+  display: flex;
+  align-items: center;
+}
+.inicio {
+  display: flex;
+  justify-content: space-between;
+}
+.p-menu {
+  padding-inline: 30px;
+  font-weight: 800;
+  color: rgb(255, 255, 255);
+}
+.p-menu-b {
+  padding-inline: 15px;
+  font-weight: 800;
+  color: rgb(255, 255, 255);
+  transition: color 0.6s ease;
+}
+.p-menu-b:hover {
+  color: rgb(161, 41, 81);
+}
+.title {
+  font-size: 2rem;
+  margin-left: 20px;
+}
+.title:hover {
+  transform: scale(1.05);
+}
+.filtro {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(189, 26, 116);
+  color: white;
+}
+.filtro div {
+  margin: 15px;
+}
+img {
+  border-radius: 12px 12px 0px 0px;
+}
+.logo {
+  width: 200px;
+  border-radius: 5px;
+}
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: rgb(255, 255, 255);
+  width: 300px;
+  height: 495px;
+  border: 1px solid rgb(241, 170, 220);
+  border-radius: 12px;
+  margin: 10px;
+  transition: all 0.4s ease-out;
+}
+.card:hover {
+  transform: scale(1.05);
+}
+.card-container {
+  display: flex;
+  justify-content: space-between right;
+  column-gap: 80px;
+  row-gap: 30px;
+  flex-wrap: wrap;
+}
+.card-img {
+  width: 300px;
+  align-items: center;
+  filter: grayscale(100%);
+  transition: filter 1s;
+}
+.card-img:hover {
+  filter: grayscale(0%);
+}
+button {
+  border: none;
+  width: 100%;
+  background-color: rgb(189, 26, 116);
+  padding: 10px;
+  color: white;
+  border-radius: 0px 0px 12px 12px;
+}
+.card-p {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+select {
+  width: 200px;
+  padding: 5px;
+  border-radius: 10px;
+}
+.paginado {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+}
+.paginado a {
+  padding: 10px;
+  text-decoration: none;
+  color: rgb(122, 16, 82);
+  border: 0.5px solid rgb(122, 16, 82);
+  margin: 5px 5px 0px 5px;
+  transition: background-color 0.3s ease-in-out;
+}
+.paginado a:hover {
+  background-color: rgb(255, 180, 226);
+}
+i {
+  transition: all 0.8s ease;
+}
+.grid-item i:hover {
+  transform: scale(1.25);
+}
+a {
+  text-decoration: none;
+  color: white;
+}
+
+@media (width > 576px) {
+  .grid-container {
+    display: grid;
+    min-height: 100vh;
+    grid-template-columns: 1fr 3fr;
+    grid-template-areas:
+      "nav aside"
+      "nav main"
+      "nav main"
+      "footer main";
+  }
+  nav {
+    width: 100%;
+  }
+  nav,
+  .inicio {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    height: 100vh;
+    margin: 0px;
+  }
+  nav,
+  .menu-inicio {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+    width: 100%;
+    padding-top: 15px;
+  }
+  .grid-item {
+    width: 220px;
+  }
+  aside {
+    margin-top: 0px;
+    width: 100%;
+  }
+  .grid-item-main {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-left: 40px;
+  }
+  .p-menu-b {
+    padding-top: 15px;
+    font-size: large;
+    transition: color 0.8s ease;
+  }
+  .p-menu-b:hover {
+    color: rgb(161, 41, 81);
+  }
+  .icon {
+    display: none;
+    color: transparent;
+  }
+  footer {
+    height: 100px;
+    position: fixed;
+    bottom: 0;
+  }
+
+  .paginado {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    bottom: 0px;
+    width: 100%;
+    background-color: white;
+  }
+  .paginado a {
+    margin: 10px;
+  }
+
+  .p-menu-b {
+    padding-inline: 15px;
+    font-weight: 800;
+    color: rgb(255, 255, 255);
+  }
+  .p-menu-b:hover {
+    color: rgb(148, 27, 73);
+  }
+  .title {
+    font-size: 2rem;
+    margin-left: 10px;
+  }
+  .title:hover {
+    transform: scale(1.05);
+  }
+}
+@media (width > 992px) {
+  .grid-container {
+    display: grid;
+    min-height: 100vh;
+    grid-template-columns: 1fr 5fr 1fr;
+    grid-template-areas:
+      "nav aside aside"
+      "nav main main"
+      "nav main main"
+      "footer main main";
+  }
+  nav,
+  .inicio {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    height: 100vh;
+    margin: 0px;
+  }
+  nav,
+  .menu-inicio {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+    width: 100%;
+    padding-top: 15px;
+  }
+  .grid-item {
+    width: 270px;
+  }
+  aside {
+    margin-top: 0px;
+    margin-left: 0px;
+    width: 100%;
+  }
+  .grid-item-main {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-left: 60px;
+  }
+  .p-menu-b {
+    padding-top: 15px;
+    font-size: large;
+  }
+
+  footer {
+    height: 100px;
+
+    position: fixed;
+    bottom: 0;
+  }
+  .title {
+    font-size: xx-large;
+    width: 220px;
+    padding-left: 0px;
+    margin-left: 12px;
+  }
+  .paginado {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    bottom: 0px;
+    width: 100%;
+    background-color: white;
+  }
+  .paginado a {
+    margin: 10px;
+  }
+  .card {
+    width: 300px;
+    height: 495px;
+  }
+  .card-img {
+    width: 300px;
+  }
+  .p-menu-b {
+    padding-inline: 15px;
+    font-weight: 800;
+    color: white;
+  }
+  .p-menu-b:hover {
+    color: rgb(161, 41, 81);
+  }
+  .title {
+    font-size: 2rem;
+    -webkit-text-stroke: 0.5px rgb(0, 0, 0);
+    margin-left: 10px;
+  }
+  .title:hover {
+    transform: scale(1.05);
+  }
+}
+@media (width < 576px) {
+  .medium {
+    display: none;
+  }
+  .logo {
+    width: 100px;
+    margin-top: 5px;
+  }
+  nav {
+    height: 70px;
+    position: fixed;
+    font-size: small;
+  }
+  aside {
+    grid-area: aside;
+    height: 80px;
+    margin: 80px -20px 0px 0px;
+    background-position: 100%;
+  }
+  main {
+    margin-bottom: 70px;
+    margin-top: 0px;
+  }
+
+  .paginado {
+    background-color: white;
+    width: 100%;
+  }
+  .card {
+    width: 250px;
+    height: 400px;
+  }
+  .card-img {
+    width: 250px;
+  }
+}
